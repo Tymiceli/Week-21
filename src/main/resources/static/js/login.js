@@ -1,11 +1,10 @@
 var submitBtn = document.querySelector("#submitBtn")
-var username = document.querySelector("#username")
 var users = []
 
 submitBtn.addEventListener('click', () => {
     var username = document.querySelector("#username")
     var password = document.querySelector("#password")
-
+    
     if (username.value == '' || password.value == '') {
         alert ("Please enter a valid username and password")
     }else {
@@ -16,8 +15,27 @@ submitBtn.addEventListener('click', () => {
         }
         users.push(user)
     }
-    }
+}
 )
 
 username.addEventListener('blur', () => {
-console.log("BLUR")})
+    var username = document.querySelector("#username")
+    var password = document.querySelector("#password")
+    var user = {
+        "username" : username.value,
+        "password" : password.value
+    }
+
+    fetch(`http://localhost:8080/users/exists`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+         },
+        body: JSON.stringify(user)
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data)
+    })
+}
+)
