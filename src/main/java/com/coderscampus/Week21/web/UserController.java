@@ -23,6 +23,7 @@ public class UserController {
 	@ResponseBody
 	public Boolean postExists (@RequestBody User user) {
 		System.out.println("Username = " + user.getUsername() + ", Password = " + user.getPassword());
+		
 		return true;
 	}
 	
