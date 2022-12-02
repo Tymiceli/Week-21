@@ -23,8 +23,8 @@ public class UserController {
 	@ResponseBody
 	public Boolean postExists (@RequestBody User user) {
 		System.out.println("Username = " + user.getUsername() + ", Password = " + user.getPassword());
-		
-		return true;
+		user = userService.findByUsername(user.getUsername());
+		return (user != null); // if user exists then (user != null) = true, if user does not exist (user != null) = false
 	}
 	
 	@GetMapping("/validateUsername")

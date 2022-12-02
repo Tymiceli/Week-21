@@ -2,6 +2,7 @@
 <html xmlns="http://thymeLeaf.org">
     <head>
         <link rel="stylesheet" href="/css/login.css">
+        <script src="https://kit.fontawesome.com/e4cc8292b8.js" crossorigin="anonymous"></script>
         <title>Register</title>
     </head>
     <body>
@@ -14,11 +15,11 @@
             </div> 
             <div>
                 <label>Password</label>
-                <input type="password" th:field="${user.password}"/>
+                <input type="password" th:field="${user.password}"/><i id='passwordIcon' class="fa-solid fa-eye"></i>
             </div>
             <div>
                 <label>Confirm Password</label>
-                <input type="password" id="confirmPassword"/>
+                <input type="password" id="confirmPassword"/><i id='confirmPasswordIcon' class="fa-solid fa-eye"></i>
             </div>
             <button>Create Account</button>
             <script type="text/javascript" src="/js/register.js"></script>

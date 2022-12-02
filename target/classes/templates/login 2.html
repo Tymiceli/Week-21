@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeLeaf.org">
+
+<head>
+
+<link rel="stylesheet" href="/css/login.css">
+	<title>Login</title>
+	<script type="text/javascript">
+		var name = 'Tyler'
+		var age = 21
+		console.log('Hello World! My name is ' + name + ' and I am ' + age + ' years old!')
+		console.log(`Hello World! My name is ${name} and I am ${age} years old!`)
+
+		var car
+		var tesla = null
+
+		console.log(typeof (car))
+		console.log(`The value of 'car' is: ${car}, the datatype is ${typeof car}`)
+		console.log(`The value of 'tesla' is: ${tesla} the datatype is ${typeof tesla}`)
+		console.log(`The value of 'name' is: ${name} the datatype is ${typeof name}`)
+		console.log(`The value of 'age' is: ${age} the datatype is ${typeof age}`)
+
+		var addition = 5 + 15
+		console.log(
+			`addition = ${addition}`
+		)
+
+		var person = {
+			'firstName': 'Trevor',
+			'lastName': 'Page',
+			'age': 37,
+			'address': {
+				'line1': '123 Fake St',
+				'line2': 'unit 34',
+				'city': 'Toronto',
+				'country': 'Canada'
+			}
+
+		}
+
+		console.log(`The value of 'person' is: ${person} the datatype is ${typeof person}`)
+		console.log(person)
+
+	</script>
+</head>
+
+<body>
+	<h1>Login Below</h1>
+	<div>
+		Username: <input type="text" id="username" th:field="${user.username}" />
+	</div>
+	<div>
+		Password: <input type="password" id="password" th:field="${user.password}" />
+	</div>
+	<div>
+		<button type="button" id="submitBtn">Submit</button>
+	</div>
+	<script type = "text/javascript" src ="/js/login.js">
+	</script>
+</body>
+
+</html>
